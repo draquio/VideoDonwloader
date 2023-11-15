@@ -1,0 +1,19 @@
+.youtube_card {
+  display: flex;
+  border: 1px solid grey;
+  max-width: 800px;
+  margin: auto;
+  .content {
+    display: flex;
+    flex-direction: row;
+    .content_info .download_button {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      p{
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+  }
+}
