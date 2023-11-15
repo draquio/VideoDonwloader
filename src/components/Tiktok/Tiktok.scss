@@ -1,6 +1,6 @@
 .tiktok_card{
     display: flex;
-    border: 1px solid grey;
+    background-color: white;
     max-width: 800px;
     margin: auto;
     .content{
@@ -8,7 +8,7 @@
         flex-direction: row;
         .img_figure{
             width: 100%;
-            max-width: 200px;
+            max-width: 150px;
             min-width: 150px;
             margin: 10px 0 10px 10px;
             img{

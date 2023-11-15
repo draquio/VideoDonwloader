@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import { TiktokIcon } from "../../Icons/Icons";
 
 export const TiktokLink = () => {
   const navigate = useNavigate();
@@ -17,13 +18,14 @@ export const TiktokLink = () => {
     }
   };
   return (
-    <>
+    <form className="form_url">
       <input
+      className="input_url"
         type="url"
-        placeholder="Agrega tu enlace de tiktok"
+        placeholder="https://www.tiktok.com/@user/video/7111387474676501765"
         onChange={handleChangeURL}
       />
-      <button onClick={getID}>Descargar</button>
-    </>
+      <button className="btn btn_green" onClick={getID}><TiktokIcon /> Descargar</button>
+    </form>
   );
 };

@@ -17,3 +17,23 @@
     }
   }
 }
+.form_url{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  gap: 10px;
+  .input_url{
+    padding: 10px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 5px;
+    width: 100%;
+    &:focus-visible{
+      outline: none;
+    }
+    &::placeholder{
+      opacity: 0.7;
+    }
+  }
+}

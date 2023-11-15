@@ -3,6 +3,7 @@ import { Tiktok as TiktokClass } from "../../services/tiktok";
 import { TiktokI } from "../../interfaces/Interfaces";
 import { TiktokCard } from "./TiktokCard";
 import "./Tiktok.scss"
+import { Loader } from "../Loader/Loader";
 export const Tiktok = (props:{id:string}) => {
   const {id} = props;
   const [video, setVideo] = useState<TiktokI>();
@@ -18,7 +19,7 @@ export const Tiktok = (props:{id:string}) => {
       }
     })();
   }, [id]);
-  if(!video) return ""
+  if(!video) return <Loader />
   return (
     <TiktokCard video={video} />
   );

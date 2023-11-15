@@ -10,6 +10,7 @@ export const downloadvideo = async (url:string, title:string) => {
         link.download = `${title}.mp4`;
         link.click();
         URL.revokeObjectURL(blobUrl);
+        return true
       } catch (error) {
         console.error("Error al descargar el video:", error);
       }

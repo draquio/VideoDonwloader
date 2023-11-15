@@ -1,14 +1,7 @@
-
-import { Link } from "../../components/Link/Link";
-import { TiktokLink } from "../../components/Tiktok/TiktokLink";
+import "./Home.scss";
+import { Menu } from "../../components/Menu/Menu";
 export const Home = () => {
   return (
-    <>
-    <Link />
-    <br />
-    <br />
-    <br />
-    <TiktokLink />
-    </>
-  )
-}
+    <Menu />
+  );
+};
