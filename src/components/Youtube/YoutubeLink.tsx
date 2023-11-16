@@ -1,31 +1,39 @@
 import { useState, ChangeEvent } from "react";
-import { useNavigate } from "react-router-dom";
 import { YoutubeIcon } from "../../Icons/Icons";
+import { Youtube } from "./Youtube";
 
 export const YoutubeLink = () => {
-    const navigate = useNavigate();
-    const [link, setLink] = useState("");
-    const handleChangeURL = (e: ChangeEvent<HTMLInputElement>) => {
-      setLink(e.target.value);
-    };
-    const getID = () => {
-      const regExp =
-        /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-      const match = link.match(regExp);
-      if (match && match[2].length == 11) {
-        const id = match[2];
-        navigate(`youtube/${id}`);
-      }
-    };
+  const [link, setLink] = useState("");
+  const [id, setId] = useState<string>("");
+  const handleChangeURL = (e: ChangeEvent<HTMLInputElement>) => {
+    setLink(e.target.value);
+  };
+  const getID = (e: React.FormEvent) => {
+    e.preventDefault()
+    const regex = /[?&]v=([^#\&\?]*).*/;
+    const match = link.match(regex);
+
+    // Verificar si se encontró una coincidencia y devolver la ID
+    if (match && match[1]) {
+      setId(match[1]);
+      console.log(match[1]);
+      
+    }
+  };
   return (
-    <form className="form_url">
-      <input
-        type="url"
-        placeholder="https://www.youtube.com/watch?v=Fn0jK0oZy80"
-        className="input_url"
-        onChange={handleChangeURL}
-      />
-      <button className="btn btn_green" onClick={getID}><YoutubeIcon /> Descargar</button>
-    </form>
-  )
-}
+    <>
+      <form className="form_url">
+        <input
+          type="url"
+          placeholder="https://www.youtube.com/watch?v=Fn0jK0oZy80"
+          className="input_url"
+          onChange={handleChangeURL}
+        />
+        <button className="btn btn_green" onClick={getID}>
+          <YoutubeIcon /> Descargar
+        </button>
+      </form>
+      {id.length > 0 ? <Youtube id={id} /> : ""}
+    </>
+  );
+};

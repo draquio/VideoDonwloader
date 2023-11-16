@@ -1,0 +1,38 @@
+.btn{
+    padding: 10px 15px;
+    display: flex;
+    cursor: pointer;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.16);
+    font-size: 16px;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    &:focus-visible{
+        outline: none;
+    }
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+.btn_green{
+    background: #00be63;
+    color:white;
+    font-weight: bold;
+    min-width: 140px;
+}
+.btn_blue{
+    background: #129fea;
+    color:white;
+}
+
+.icon{
+    stroke: white;
+    margin-right: 5px;
+    width: 20px;
+    height: auto;
+}

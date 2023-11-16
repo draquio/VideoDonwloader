@@ -23,7 +23,7 @@ export const TiktokCard = (props: { video: TiktokI }) => {
           <img src={video.dynamic_cover} alt={video.description} />
         </figure>
         <div className="content_info">
-          <h2>{video.description}</h2>
+          <h3>{video.description}</h3>
           {/* <figure className="author">
             <img src={video.avatar_thumb} alt="Avatar" />
             <h3>{video.author}</h3>

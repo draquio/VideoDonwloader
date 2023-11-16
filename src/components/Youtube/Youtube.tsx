@@ -3,6 +3,7 @@ import { Youtube as YoutubeClass } from "../../services/youtube";
 import { CardYoutube } from "./CardYoutube";
 import { YoutubeI } from "../../interfaces/Interfaces";
 import "./Youtube.scss";
+import { Loader } from "../Loader/Loader";
 export const Youtube = (props: { id: string }) => {
   const { id } = props;
   const [video, setVideo] = useState<YoutubeI>();
@@ -17,6 +18,6 @@ export const Youtube = (props: { id: string }) => {
       }
     })();
   }, [id]);
-  if (!video) return "";
+  if (!video) return <Loader />;
   return <CardYoutube video={video} />;
 };
