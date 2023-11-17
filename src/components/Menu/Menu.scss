@@ -1,9 +1,22 @@
-.menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    .btn_transparent{
+@import "../../Sass/Index.scss";
+.content_data {
+  background: linear-gradient(
+    54.09deg,
+    #0348dd 2.03%,
+    #8142f5 48.63%,
+    #ee4dd4 96.22%
+  );
+  padding: 50px 0;
+  min-height: 250px;
+  .block_info {
+    max-width: 800px;
+    margin: auto;
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      .btn_transparent {
         padding: 12px 20px;
         border: 0;
         background: #ffffff1a;
@@ -16,8 +29,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        &.active{
-            background-color: #ffffff66;
+        &.active {
+          background-color: #ffffff66;
         }
+      }
     }
+    .title {
+      margin: 30px 0 40px 0;
+      text-align: center;
+      h1 {
+        color: white;
+      }
+      h2 {
+        font-size: 18px;
+        color: white;
+        font-weight: 300;
+      }
+    }
+  }
 }

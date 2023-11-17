@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, MouseEvent } from "react";
 import { YoutubeIcon } from "../../Icons/Icons";
 import { Youtube } from "./Youtube";
 
@@ -8,17 +8,12 @@ export const YoutubeLink = () => {
   const handleChangeURL = (e: ChangeEvent<HTMLInputElement>) => {
     setLink(e.target.value);
   };
+  const handleClickInput = (e: MouseEvent<HTMLInputElement>) => {
+    e.currentTarget.select();
+  };
   const getID = (e: React.FormEvent) => {
-    e.preventDefault()
-    const regex = /[?&]v=([^#\&\?]*).*/;
-    const match = link.match(regex);
-
-    // Verificar si se encontró una coincidencia y devolver la ID
-    if (match && match[1]) {
-      setId(match[1]);
-      console.log(match[1]);
-      
-    }
+    e.preventDefault();
+    setId(link);
   };
   return (
     <>
@@ -28,12 +23,13 @@ export const YoutubeLink = () => {
           placeholder="https://www.youtube.com/watch?v=Fn0jK0oZy80"
           className="input_url"
           onChange={handleChangeURL}
+          onClick={handleClickInput}
         />
         <button className="btn btn_green" onClick={getID}>
           <YoutubeIcon /> Descargar
         </button>
       </form>
-      {id.length > 0 ? <Youtube id={id} /> : ""}
+      {id.length > 0 ? <Youtube link={id} /> : ""}
     </>
   );
 };

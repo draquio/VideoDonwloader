@@ -1,24 +1,14 @@
 @import "../Sass/Index.scss";
 .main {
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   .container {
     width: 100%;
-    margin: auto;
-    padding: 25px 0;
-    background: linear-gradient(
-      54.09deg,
-      #0348dd 2.03%,
-      #8142f5 48.63%,
-      #ee4dd4 96.22%
-    );
     min-height: 300px;
-    .content_data {
-      min-height: 200px;
-      width: 100%;
-      max-width: 800px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-    }
+  }
+  .footer{
+    margin-top: auto;
   }
 }

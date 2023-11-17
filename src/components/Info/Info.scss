@@ -1,0 +1,54 @@
+@import "../../Sass/Index.scss";
+.info_section {
+  margin: 100px auto;
+  max-width: 1000px;
+  width: 100%;
+  h2,
+  p {
+    text-align: center;
+  }
+  .info {
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+    align-items: flex-start;
+    justify-content: space-between;
+    figure {
+      min-width: 300px;
+      width: 35%;
+      height: 35%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .text_info {
+      width: 60%;
+      padding: 10px;
+      text-align: center;
+      box-sizing: border-box;
+      h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+@media (max-width: $responsive_media) {
+  .info_section {
+    
+    .info {
+      flex-direction: column;
+      align-items: center;
+      figure,
+      .text_info {
+        width: 90%;
+      }
+    }
+    .info:nth-child(4){
+      flex-direction: column-reverse;
+    }
+    
+  }
+}

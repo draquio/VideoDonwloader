@@ -1,30 +1,51 @@
 .loader {
-    border: 4px solid rgba(0, 0, 0, .1);
-    border-left-color: transparent;
-    border-radius: 50%;
+  opacity: 0.8;
+  border: 4px solid white;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+.loader {
+  border: 4px solid white;
+  opacity: 0.8;
+  border-left-color: transparent;
+  width: 12px;
+  height: 12px;
+}
+
+.loader {
+  border: 4px solid white;
+  opacity: 0.8;
+  border-left-color: transparent;
+  width: 12px;
+  height: 12px;
+  animation: spin89345 1s linear infinite;
+}
+.downloading_button{
+  color: white;
+  opacity: 0.8;
+  margin-left: 10px;
+  animation: changetransparent 2s linear infinite;
+}
+
+@keyframes changetransparent {
+  0%{
+    opacity: 0.5;
   }
-  
-  .loader {
-    border: 4px solid rgba(0, 0, 0, .1);
-    border-left-color: transparent;
-    width: 36px;
-    height: 36px;
+  50%{
+    opacity: 1;
   }
-  
-  .loader {
-    border: 4px solid rgba(0, 0, 0, .1);
-    border-left-color: transparent;
-    width: 18px;
-    height: 18px;
-    animation: spin89345 1s linear infinite;
+  100%{
+    opacity: 0.5;
   }
-  
-  @keyframes spin89345 {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
+}
+
+@keyframes spin89345 {
+  0% {
+    transform: rotate(0deg);
   }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

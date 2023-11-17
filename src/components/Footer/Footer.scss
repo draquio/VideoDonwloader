@@ -1,0 +1,19 @@
+.link_footer {
+  border-top: 2px solid;
+  border-image: linear-gradient(
+      54.09deg,
+      #0348dd 2.03%,
+      #8142f5 48.63%,
+      #ee4dd4 96.22%
+    )
+    1;
+  border-image-slice: 1;
+  color: rgb(53, 53, 53);
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 10px;
+}

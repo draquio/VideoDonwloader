@@ -1,0 +1,26 @@
+@import "../../Sass/Index.scss";
+.nav{
+    background-color: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .nav_content{
+        max-width: 1000px;
+        width: 100%;
+        .logo{
+            background: linear-gradient(54.09deg, #0348dd 2.03%, #8142f5 48.63%, #ee4dd4 96.22%);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 600;   
+            width: 155px; 
+            font-size: 20px;
+        }
+    }
+}
+@media (max-width: $responsive_media){
+    .nav .nav_content{
+        display: flex;
+        justify-content: center;
+    }
+}
