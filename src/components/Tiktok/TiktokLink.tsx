@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, MouseEvent } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { TiktokIcon } from "../../Icons/Icons";
 import { Tiktok } from "./Tiktok";
 
@@ -11,9 +11,7 @@ export const TiktokLink = () => {
   const getID = (e: React.FormEvent) => {
     e.preventDefault();
     setId(link);
-  };
-  const handleClickInput = (e: MouseEvent<HTMLInputElement>) => {
-    e.currentTarget.select();
+    setLink("")
   };
   return (
     <>
@@ -23,7 +21,7 @@ export const TiktokLink = () => {
           type="text"
           placeholder="https://www.tiktok.com/@user/video/7111387474676501765"
           onChange={handleChangeURL}
-          onClick={handleClickInput}
+          value={link}
         />
         <button className="btn btn_green" onClick={getID}>
           <TiktokIcon /> Descargar

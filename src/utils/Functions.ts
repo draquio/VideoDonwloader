@@ -17,26 +17,31 @@ export const downloadvideo = async (url: string, title: string) => {
 export const GetYoutubeID = (url: string) => {
   const shortExpression = /youtu\.be\/(\w+)/;
   const longExpression = /youtube\.com\/.*[?&]v=([^#&?]+)/;
+  const YshortExpression = /\/shorts\/([A-Za-z0-9_-]+)/;
 
   const shortid = url.match(shortExpression);
   const longid = url.match(longExpression);
+  const Yshortid = url.match(YshortExpression);
+
   if (shortid && shortid[1]) {
     return shortid[1];
   } else if (longid && longid[1]) {
     return longid[1];
+  }else if (Yshortid && Yshortid[1]) {
+    return Yshortid[1];
   } else {
     return null;
   }
 };
 
 export const VerifyYoutubeLink = (url: string) => {
-  const shortExpression = /youtu\.be\/(\w+)/;
-  const longExpression = /youtube\.com\/.*[?&]v=([^#&?]+)/;
-  return shortExpression.test(url) || longExpression.test(url);
+  const youtubeExpression = /^(https?:\/\/)?(www\.)?(youtu\.be\/|youtube\.com\/(shorts\/)?(embed\/|v\/|watch\?v=|watch\?.+&v=)?)([^#&?]{11})/;
+  return youtubeExpression.test(url);
 };
 
 export const VerifyLinkTiktok = (url: string) => {
   const Expression =
     /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/(?:\w+\/)?(@\w+\/)?video\/(\d+)/;
-  return Expression.test(url);
+    const ExpressionMovile = /^https:\/\/vm\.tiktok\.com\/[A-Za-z0-9_-]+\/?$/;
+  return Expression.test(url) || ExpressionMovile.test(url);
 };

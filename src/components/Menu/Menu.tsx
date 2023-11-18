@@ -27,7 +27,7 @@ export const Menu = () => {
         </button>
       </div>
       <div className="title">
-        <h1>Descarga Videos totalmente gratis</h1>
+        <h1>Descarga Videos Gratis</h1>
         <h2>Descarga videos de Youtube y Tiktok</h2>
       </div>
       {menu === "youtube" ? <YoutubeLink /> : ""}

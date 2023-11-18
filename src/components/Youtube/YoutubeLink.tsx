@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, MouseEvent } from "react";
+import { useState, ChangeEvent } from "react";
 import { YoutubeIcon } from "../../Icons/Icons";
 import { Youtube } from "./Youtube";
 
@@ -8,12 +8,10 @@ export const YoutubeLink = () => {
   const handleChangeURL = (e: ChangeEvent<HTMLInputElement>) => {
     setLink(e.target.value);
   };
-  const handleClickInput = (e: MouseEvent<HTMLInputElement>) => {
-    e.currentTarget.select();
-  };
   const getID = (e: React.FormEvent) => {
     e.preventDefault();
     setId(link);
+    setLink("")
   };
   return (
     <>
@@ -23,7 +21,7 @@ export const YoutubeLink = () => {
           placeholder="https://www.youtube.com/watch?v=Fn0jK0oZy80"
           className="input_url"
           onChange={handleChangeURL}
-          onClick={handleClickInput}
+          value={link}
         />
         <button className="btn btn_green" onClick={getID}>
           <YoutubeIcon /> Descargar

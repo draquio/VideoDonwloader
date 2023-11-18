@@ -9,12 +9,15 @@
         max-width: 1000px;
         width: 100%;
         .logo{
-            background: linear-gradient(54.09deg, #0348dd 2.03%, #8142f5 48.63%, #ee4dd4 96.22%);
-            -webkit-background-clip: text;
-            color: transparent;
-            font-weight: 600;   
-            width: 155px; 
-            font-size: 20px;
+                a{
+                    text-decoration: none;
+                background: linear-gradient(54.09deg, #0348dd 2.03%, #8142f5 48.63%, #ee4dd4 96.22%);
+                -webkit-background-clip: text;
+                color: transparent;
+                font-weight: 600;   
+                width: 155px; 
+                font-size: 20px;
+            }
         }
     }
 }

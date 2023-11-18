@@ -8,7 +8,7 @@ export const Info = () => {
       <p>Descarga videos de Youtube/Tiktok</p>
       <div className="info">
         <figure>
-          <img src={youtube} />
+          <img src={youtube} alt="Descargar videos de Youtube gratis"/>
         </figure>
         <div className="text_info">
           <h3>Descarga Videos de Youtube</h3>
@@ -28,7 +28,7 @@ export const Info = () => {
           sin conexión en cuestión de segundos.
         </div>
         <figure>
-          <img src={tiktok} />
+          <img src={tiktok} alt="Descargar videos de Tiktok gratis"/>
         </figure>
       </div>
     </div>

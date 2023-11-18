@@ -13,6 +13,7 @@
     margin-top: 50px;
     align-items: flex-start;
     justify-content: space-between;
+    box-shadow: rgba(0,0,0,.1) 0 8px 32px -4px;
     figure {
       min-width: 300px;
       width: 35%;
@@ -20,11 +21,12 @@
       img {
         width: 100%;
         height: 100%;
+        display: block
       }
     }
     .text_info {
       width: 60%;
-      padding: 10px;
+      padding: 25px;
       text-align: center;
       box-sizing: border-box;
       h3 {
