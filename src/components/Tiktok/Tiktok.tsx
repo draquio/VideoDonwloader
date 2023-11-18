@@ -18,6 +18,7 @@ export const Tiktok = (props:{link:string}) => {
   useEffect(() => {
     (async () => {
       try {
+        setError("")
         setIsLoading(true)
         if(VerifyLinkTiktok(link)){
           const TiktokController = new TiktokClass();

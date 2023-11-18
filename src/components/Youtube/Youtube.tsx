@@ -15,7 +15,8 @@ export const Youtube = (props: { link: string }) => {
   const [error, setError] = useState("");
   useEffect(() => {
     (async () => {
-      try {        
+      try {    
+        setError("")    
         setIsLoading(true);
         const id = GetYoutubeID(link);
         if (id && VerifyYoutubeLink(link))  {
