@@ -1,27 +1,14 @@
-# React + TypeScript + Vite
+# Descarga Videos de Youtube y Tiktok
+Código del sitio web donde podrás descargar videos de Youtube y Tiktok realizado con React, TypeScript y Sass mediante el consumo de APIs.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Instalación
+1. Clona el respositorio con `git clone https://github.com/draquio/VideoDonwloader.git`
+2. Entra en la carpeta e instala las dependencias con `npm install`
+3. Suscríbete para conseguir la API de Tiktok `https://rapidapi.com/maatootz/api/tiktok-downloader-download-tiktok-videos-without-watermark`
+4. Suscríbete para conseguir la API de Youtube `https://rapidapi.com/ytjar/api/ytstream-download-youtube-videos`
+5. Agrega tu API de Youtube y Tiktok en `utils/constants.ts`
+7. Levanta el proyecto con `npm run dev`
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Dependencias
+- react-router-dom
+- react-lazy-load-image-component
