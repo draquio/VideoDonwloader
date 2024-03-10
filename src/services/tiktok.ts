@@ -8,8 +8,7 @@ export class Tiktok {
         method: "GET",
         headers: {
           "X-RapidAPI-Key": ENV.API_Key,
-          "X-RapidAPI-Host":
-            "tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com",
+          "X-RapidAPI-Host": ENV.Tiktok_host,
         },
       };
       const response = await fetch(url, params);

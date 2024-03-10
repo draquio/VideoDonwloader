@@ -3,7 +3,7 @@ export type video = [{qualityLabel: string, url: string}];
 export interface YoutubeI {
   id: string;
   thumb: thumbnail[];
-  video: AdaptiveFormat[];
+  video: Formats[];
   title: string;
 }
 
@@ -18,10 +18,9 @@ export interface TiktokI {
   author: string;
 }
 
-export interface AdaptiveFormat {
+export interface Formats {
   qualityLabel:string,
   url: string;
-  mimeType: string;
 }
 
 interface thumbnail {

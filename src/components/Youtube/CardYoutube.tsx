@@ -13,7 +13,7 @@ export const CardYoutube = (props: { video: YoutubeI }) => {
           <h3>{video.title}</h3>
           <div className="download_button" >
           {video.video.map((v, index) => (
-                <p key={index}>{v.qualityLabel}.mp4 <a target="_blank" className="btn btn_blue" download="videoconvertido.mp4" href={`${v.url}&title=video`}>Descargar</a></p>                ))}
+                <p key={index}>{v.qualityLabel}.mp4 <a target="_blank" className="btn btn_blue" download="videoconvertido.mp4" href={`${v.url}&title=${video.title}`}>Descargar</a></p>                ))}
                 </div>
           <p>
           </p>
