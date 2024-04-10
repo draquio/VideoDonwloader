@@ -7,7 +7,7 @@ export const CardYoutube = (props: { video: YoutubeI }) => {
     <article className="youtube_card">
       <div className="content">
         <figure className="img_figure">
-          <img src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} alt={video.title} />
+          <img src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} loading="eager" alt={video.title} />
         </figure>
         <div className="content_info">
           <h3>{video.title}</h3>

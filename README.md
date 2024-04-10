@@ -11,4 +11,5 @@ Código del sitio web donde podrás descargar videos de Youtube y Tiktok realiza
 
 # Dependencias
 - react-router-dom
-- react-lazy-load-image-component
+- sass
+- @vercel/analytics
