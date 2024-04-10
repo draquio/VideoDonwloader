@@ -1,28 +1,31 @@
-export type video = [{qualityLabel: string, url: string}];
+export type video = [{ qualityLabel: string; url: string }];
 
 export interface YoutubeI {
   id: string;
-  thumb: thumbnail[];
   video: Formats[];
   title: string;
 }
 
 export interface TiktokI {
-  video: string;
-  cover: string;
-  dynamic_cover: string;
-  vatar_thumb: string;
-  description: string;
-  videoid: string;
-  avatar_thumb: string;
-  author: string;
+  title: string,
+  thumbnail: string,
+  video: string,
+  id: string
 }
 
 export interface Formats {
-  qualityLabel:string,
+  qualityLabel: string;
   url: string;
 }
 
-interface thumbnail {
-  url: string;
+export interface YoutubeResponse {
+  id: string;
+  formats: Formats[];
+  title: string;
+}
+export interface TiktokResponse {
+  videoid: string;
+  dynamic_cover: string;
+  video: string,
+  description: string;
 }

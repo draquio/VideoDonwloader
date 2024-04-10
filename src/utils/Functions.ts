@@ -15,33 +15,36 @@ export const downloadvideo = async (url: string, title: string) => {
 };
 
 export const GetYoutubeID = (url: string) => {
-  const shortExpression = /youtu\.be\/(\w+)/;
-  const longExpression = /youtube\.com\/.*[?&]v=([^#&?]+)/;
-  const YshortExpression = /\/shorts\/([A-Za-z0-9_-]+)/;
-
-  const shortid = url.match(shortExpression);
-  const longid = url.match(longExpression);
-  const Yshortid = url.match(YshortExpression);
-
-  if (shortid && shortid[1]) {
-    return shortid[1];
-  } else if (longid && longid[1]) {
-    return longid[1];
-  } else if (Yshortid && Yshortid[1]) {
-    return Yshortid[1];
-  } else {
-    return null;
+  if (!url) return null;
+  const patterns = [
+    /youtu\.be\/(\w+)/, // Formato corto
+    /youtube\.com\/.*[?&]v=([^#&?]+)/, // Formato largo
+    /\/shorts\/([A-Za-z0-9_-]+)/, // Formato de shorts
+  ];
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      return match[1];
+    }
   }
+  return null;
 };
 
 export const VerifyYoutubeLink = (url: string) => {
-  const youtubeExpression =
-    /^(https?:\/\/)?(www\.)?(youtu\.be\/|youtube\.com\/(shorts\/)?(embed\/|v\/|watch\?v=|watch\?.+&v=)?)([^#&?]{11})/;
+  if (!url) return false
+  const youtubeExpression = new RegExp(
+    '^(https?:\\/\\/)?' + // Protocolo (opcional)
+    '(www\\.)?' + // www (opcional)
+    '(youtu\\.be\\/|youtube\\.com\\/' + // Dominio
+    '(shorts\\/)?' + // Shorts (opcional)
+    '(embed\\/|v\\/|watch\\?v=|watch\\?.+&v=)?' + // Rutas y parámetros
+    ')([\\w-]{11})' // ID del video
+  );
   return youtubeExpression.test(url);
 };
 
 export const VerifyLinkTiktok = (url: string) => {
-  const Expression =
-    /(?:https?:\/\/)?(?:www\.)?(tiktok\.com\/(?:\w+\/)?(@\w+\/)?video\/(\d+)|vm\.tiktok\.com\/[A-Za-z0-9_-]+\/?|www\.tiktok\.com\/@[^/]+\/video\/\d+\?q=\w+&t=\d+)/;
+  if(!url) return false;
+  const Expression = /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/(?:@[\w.-]+\/)?video\/(\d+)|(vm\.tiktok\.com\/[\w-]+)/;
   return Expression.test(url);
 };

@@ -1,7 +1,9 @@
+import { TiktokI } from "../interfaces/Interfaces";
+import { MapTiktok } from "../utils/MapFetchs";
 import { ENV } from "../utils/constants";
 
 export class Tiktok {
-  async DownloadVideo(id: string) {
+  async DownloadVideo(id: string): Promise<TiktokI> {
     try {
       const url = `${ENV.Tiktok_url}${id}`
       const params = {
@@ -14,11 +16,12 @@ export class Tiktok {
       const response = await fetch(url, params);
       if (response.status === 200) {
         const result = await response.json();
-        return result;
+        return MapTiktok(result);
       }
       throw response;
     } catch (error) {
-      return error;
+      console.error(error);
+      throw new Error("Algo ha salido mal");
     }
   }
 }

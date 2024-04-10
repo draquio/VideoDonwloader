@@ -7,11 +7,9 @@ import { DownloadIcon } from "../../Icons/Icons";
 export const TiktokCard = (props: { video: TiktokI }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { video } = props;
-  
-
   const handleDownloadeVideo = async () => {
     setIsLoading(true);
-    const response = await downloadvideo(video.video, video.description);
+    const response = await downloadvideo(video.video, video.title);
     if (response) {
       setIsLoading(false);
     }
@@ -21,10 +19,10 @@ export const TiktokCard = (props: { video: TiktokI }) => {
     <article className="tiktok_card">
       <div className="content">
         <figure className="img_figure">
-          <img src={video.dynamic_cover} alt={video.description} />
+          <img src={video.thumbnail} alt={video.title} />
         </figure>
         <div className="content_info">
-          <h3>{video.description[0].length >= 300 ? <>{video.description[0].slice(0,300)} ...</> : video.description}</h3>
+          <h3>{video.title.length >= 300 ? <>{video.title.slice(0,300)} ...</> : video.title}</h3>
           <button className="btn btn_green" onClick={handleDownloadeVideo}>
             {isLoading ? (
               <>

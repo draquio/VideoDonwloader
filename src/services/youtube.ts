@@ -1,10 +1,11 @@
+import { YoutubeI } from "../interfaces/Interfaces";
+import { MapYoutube } from "../utils/MapFetchs";
 import { ENV } from "../utils/constants";
 
 export class Youtube {
-  async DownloadVideo(id: string) {
+  async DownloadVideo(id: string) : Promise<YoutubeI> {
     try {
       const url = `${ENV.Youtube_url}${id}`;
-
       const params = {
         method: "GET",
         headers: {
@@ -15,12 +16,14 @@ export class Youtube {
       const response = await fetch(url, params);
       if (response.status === 200) {
         const result = await response.json();
-        return result;
-      } else {
-        throw response;
+        console.log(result);
+        
+        return MapYoutube(result);
       }
+      throw response;
     } catch (error) {
-      return error;
+      console.error(error);
+      throw new Error("Algo ha salido mal");
     }
   }
 }

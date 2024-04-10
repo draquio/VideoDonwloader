@@ -4,7 +4,7 @@ import { CardYoutube } from "./CardYoutube";
 import { YoutubeI } from "../../interfaces/Interfaces";
 import "./Youtube.scss";
 import { Loader } from "../Loader/Loader";
-import { MapYoutube } from "../../utils/MapFetchs";
+// import { MapYoutube } from "../../utils/MapFetchs";
 import { GetYoutubeID, VerifyYoutubeLink } from "../../utils/Functions";
 import { Error } from "../Error/Error";
 
@@ -12,7 +12,7 @@ export const Youtube = (props: { link: string }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { link } = props;
   const [video, setVideo] = useState<YoutubeI>();
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string>("");
   useEffect(() => {
     (async () => {
       try {    
@@ -22,18 +22,18 @@ export const Youtube = (props: { link: string }) => {
         if (id && VerifyYoutubeLink(link))  {
           const YoutubeController = new YoutubeClass();
           const response = await YoutubeController.DownloadVideo(id); 
-          if (response.status === "OK") {
-            const result = MapYoutube(response);
-            setVideo(result); 
-          }else{
-            setError("El video no se puede encontrar")
-          }
+          setVideo(response);
+          console.log(response);
+          
         }else{
           setError("Enlace no válido");
         }
         setIsLoading(false);
       } catch (error) {
         console.error(error);
+        const message = (error as Error).message;
+        setError(message)
+        setIsLoading(false);
       }
     })();
   }, [link]);

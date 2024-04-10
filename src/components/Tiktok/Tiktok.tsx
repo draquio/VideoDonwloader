@@ -11,7 +11,7 @@ export const Tiktok = (props:{link:string}) => {
   const [isLoading, setIsLoading] = useState(false);
   const {link} = props;
   const [video, setVideo] = useState<TiktokI>();
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string>("");
   const closeError = () => {
     setError("");
   };
@@ -31,6 +31,9 @@ export const Tiktok = (props:{link:string}) => {
         setIsLoading(false);
       } catch (error) {
         console.error(error);
+        const message = (error as Error).message;
+        setError(message)
+        setIsLoading(false);
       }
     })();
   }, [link]);
