@@ -11,12 +11,13 @@ export const TiktokLink = () => {
   const getID = (e: React.FormEvent) => {
     e.preventDefault();
     setId(link);
-    setLink("")
+    setLink("");
   };
   return (
     <>
       <form className="form_url">
         <input
+          aria-label="tiktok_url"
           className="input_url"
           type="text"
           placeholder="https://www.tiktok.com/@user/video/7111387474676501765"

@@ -10,13 +10,16 @@ export const YoutubeLink = () => {
   };
   const getID = (e: React.FormEvent) => {
     e.preventDefault();
-    setId(link);
-    setLink("")
+    if (link) {
+      setId(link);
+      setLink(""); 
+    }
   };
   return (
     <>
       <form className="form_url">
         <input
+          aria-label="youtube_link"
           type="url"
           placeholder="https://www.youtube.com/watch?v=Fn0jK0oZy80"
           className="input_url"

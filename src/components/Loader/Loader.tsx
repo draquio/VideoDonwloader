@@ -1,4 +1,4 @@
 import "./Loader.scss";
 export const Loader = () => {
-  return <div className="spinner"></div>;
+  return <div aria-label="loader" className="spinner"></div>;
 };

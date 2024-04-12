@@ -16,8 +16,6 @@ export class Youtube {
       const response = await fetch(url, params);
       if (response.status === 200) {
         const result = await response.json();
-        console.log(result);
-        
         return MapYoutube(result);
       }
       throw response;

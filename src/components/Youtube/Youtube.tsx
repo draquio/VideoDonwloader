@@ -4,7 +4,6 @@ import { CardYoutube } from "./CardYoutube";
 import { YoutubeI } from "../../interfaces/Interfaces";
 import "./Youtube.scss";
 import { Loader } from "../Loader/Loader";
-// import { MapYoutube } from "../../utils/MapFetchs";
 import { GetYoutubeID, VerifyYoutubeLink } from "../../utils/Functions";
 import { Error } from "../Error/Error";
 
@@ -23,8 +22,6 @@ export const Youtube = (props: { link: string }) => {
           const YoutubeController = new YoutubeClass();
           const response = await YoutubeController.DownloadVideo(id); 
           setVideo(response);
-          console.log(response);
-          
         }else{
           setError("Enlace no válido");
         }

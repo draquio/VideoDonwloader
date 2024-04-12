@@ -16,7 +16,7 @@ export const TiktokCard = (props: { video: TiktokI }) => {
   };
 
   return (
-    <article className="tiktok_card">
+    <article className="tiktok_card" aria-label="tiktok_card">
       <div className="content">
         <figure className="img_figure">
           <img src={video.thumbnail} alt={video.title} loading="eager" />

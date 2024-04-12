@@ -2,12 +2,11 @@
 import { YoutubeI } from "../../interfaces/Interfaces";
 export const CardYoutube = (props: { video: YoutubeI }) => {
   const { video } = props; 
-   
   return (
-    <article className="youtube_card">
+    <article aria-label="youtube_card" className="youtube_card">
       <div className="content">
         <figure className="img_figure">
-          <img src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} loading="eager" alt={video.title} />
+          <img src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} loading="eager" alt={video.title}  aria-label="video-image" />
         </figure>
         <div className="content_info">
           <h3>{video.title}</h3>
