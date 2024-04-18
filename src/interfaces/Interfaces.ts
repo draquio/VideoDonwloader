@@ -7,10 +7,10 @@ export interface YoutubeI {
 }
 
 export interface TiktokI {
-  title: string,
-  thumbnail: string,
-  video: string,
-  id: string
+  title: string;
+  thumbnail: string;
+  video: string;
+  id: string;
 }
 
 export interface Formats {
@@ -24,8 +24,19 @@ export interface YoutubeResponse {
   title: string;
 }
 export interface TiktokResponse {
-  videoid: string;
-  dynamic_cover: string;
-  video: string,
-  description: string;
+  added_sound_music_info: id_str;
+  video: Tiktokvideo;
+  desc: string;
 }
+
+type id_str = {
+  id_str: string;
+};
+type Tiktokvideo = {
+  dynamic_cover: url_list;
+  play_addr: url_list;
+};
+
+type url_list = {
+  url_list: string[];
+};

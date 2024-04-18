@@ -23,8 +23,7 @@ export const Tiktok = (props:{link:string}) => {
         if(VerifyLinkTiktok(link)){
           const TiktokController = new TiktokClass();
           const response = await TiktokController.DownloadVideo(link);
-          setVideo(response);          
-          setIsLoading(false)
+          setVideo(response);        
         }else{
           setError("Enlace no válido")
         }

@@ -5,7 +5,7 @@ import { ENV } from "../utils/constants";
 export class Tiktok {
   async DownloadVideo(id: string): Promise<TiktokI> {
     try {
-      const url = `${ENV.Tiktok_url}${id}`
+      const url = `${ENV.Tiktok_url}${id}`;
       const params = {
         method: "GET",
         headers: {
@@ -15,8 +15,9 @@ export class Tiktok {
       };
       const response = await fetch(url, params);
       if (response.status === 200) {
-        const result = await response.json();
-        return MapTiktok(result);
+        const result = await response.text();
+        const resultJson = JSON.parse(result);
+        return MapTiktok(resultJson);
       }
       throw response;
     } catch (error) {

@@ -22,7 +22,13 @@ export const TiktokCard = (props: { video: TiktokI }) => {
           <img src={video.thumbnail} alt={video.title} loading="eager" />
         </figure>
         <div className="content_info">
-          <h3>{video.title.length >= 300 ? <>{video.title.slice(0,300)} ...</> : video.title}</h3>
+          <h3>
+            {video.title.length >= 300 ? (
+              <>{video.title.slice(0, 300)} ...</>
+            ) : (
+              video.title
+            )}
+          </h3>
           <button className="btn btn_green" onClick={handleDownloadeVideo}>
             {isLoading ? (
               <>

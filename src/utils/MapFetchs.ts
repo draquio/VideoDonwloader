@@ -1,8 +1,12 @@
-import { YoutubeResponse, YoutubeI, TiktokResponse, TiktokI } from "../interfaces/Interfaces";
-
+import {
+  YoutubeResponse,
+  YoutubeI,
+  TiktokResponse,
+  TiktokI,
+} from "../interfaces/Interfaces";
 
 export const MapYoutube = (video: YoutubeResponse): YoutubeI => {
-  if(!video) return {id: "", video: [], title: "No video provided"}; 
+  if (!video) return { id: "", video: [], title: "No video provided" };
   const youtubevideo: YoutubeI = {
     id: video.id,
     video: video.formats.reverse(),
@@ -11,14 +15,13 @@ export const MapYoutube = (video: YoutubeResponse): YoutubeI => {
   return youtubevideo;
 };
 
-
 export const MapTiktok = (video: TiktokResponse): TiktokI => {
-  if(!video) return {id: "", video: "", title: "No video provided", thumbnail: ""}; 
+  if (!video) return { id: "", video: "", title: "No video provided", thumbnail: "" };
   const tiktokvideo: TiktokI = {
-    id: video.videoid[0],
-    thumbnail: video.dynamic_cover[0],
-    video: video.video[0],
-    title: video.description[0],
+    id: video.added_sound_music_info.id_str,
+    thumbnail: video.video.dynamic_cover.url_list[0],
+    video: video.video.play_addr.url_list[0],
+    title: video.desc,
   };
   return tiktokvideo;
 };
