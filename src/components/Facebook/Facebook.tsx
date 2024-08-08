@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FacebookI } from "../../interfaces/Interfaces";
 import { VerifyLinkFacebook } from "../../utils/Functions";
 import { Facebook as FacebookClass } from "../../services/facebook";
