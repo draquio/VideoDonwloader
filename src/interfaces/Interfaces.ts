@@ -12,6 +12,12 @@ export interface TiktokI {
   video: string;
   id: string;
 }
+export interface InstagramI {
+  title: string;
+  thumbnail: string;
+  video: string;
+  id: string;
+}
 
 export interface Formats {
   qualityLabel: string;
@@ -27,6 +33,21 @@ export interface TiktokResponse {
   added_sound_music_info: id_str;
   video: Tiktokvideo;
   desc: string;
+}
+
+export interface InstagramResponse {
+  instaUr: string;
+  cover: string;
+  download_link: string;
+}
+export interface InstagramResponseData {
+  error: boolean;
+  hosting: string;
+  shortcode: string;
+  caption: string;
+  type: string;
+  download_url: string;
+  thumb: string;
 }
 
 type id_str = {

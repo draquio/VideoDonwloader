@@ -30,21 +30,26 @@ export const GetYoutubeID = (url: string) => {
   return null;
 };
 
-export const VerifyYoutubeLink = (url: string) => {
+export const VerifyYoutubeLink = (url: string): boolean => {
   if (!url) return false
   const youtubeExpression = new RegExp(
-    '^(https?:\\/\\/)?' + // Protocolo (opcional)
-    '(www\\.)?' + // www (opcional)
-    '(youtu\\.be\\/|youtube\\.com\\/' + // Dominio
-    '(shorts\\/)?' + // Shorts (opcional)
-    '(embed\\/|v\\/|watch\\?v=|watch\\?.+&v=)?' + // Rutas y parámetros
-    ')([\\w-]{11})' // ID del video
+    '^(https?:\\/\\/)?' +
+    '(www\\.)?' +
+    '(youtu\\.be\\/|youtube\\.com\\/' + 
+    '(shorts\\/)?' + 
+    '(embed\\/|v\\/|watch\\?v=|watch\\?.+&v=)?' +
+    ')([\\w-]{11})' 
   );
   return youtubeExpression.test(url);
 };
 
-export const VerifyLinkTiktok = (url: string) => {
+export const VerifyLinkTiktok = (url: string): boolean => {
   if(!url) return false;
   const Expression = /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/(?:@[\w.-]+\/)?video\/(\d+)|(vm\.tiktok\.com\/[\w-]+)/;
   return Expression.test(url);
 };
+
+export const VerifyLinkInstagramReel = (url:string): boolean =>{
+  const videoRegex = /^https:\/\/(www\.)?instagram\.com\/(reel|tv|p)\/[A-Za-z0-9-_]+\/?$/;
+  return videoRegex.test(url);
+}

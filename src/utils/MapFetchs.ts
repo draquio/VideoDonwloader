@@ -3,6 +3,8 @@ import {
   YoutubeI,
   TiktokResponse,
   TiktokI,
+  InstagramResponse,
+  InstagramI,
 } from "../interfaces/Interfaces";
 
 export const MapYoutube = (video: YoutubeResponse): YoutubeI => {
@@ -25,3 +27,14 @@ export const MapTiktok = (video: TiktokResponse): TiktokI => {
   };
   return tiktokvideo;
 };
+
+export const MapInstagram = (video: InstagramResponse, title: string): InstagramI => {
+  if(!video) return { id: "", video: "", title: "no video provided", thumbnail: "" };
+  const instagramvideo: InstagramI = {
+    id: video.instaUr,
+    thumbnail: video.cover,
+    title: title,
+    video: video.download_link
+  };
+  return instagramvideo;
+}

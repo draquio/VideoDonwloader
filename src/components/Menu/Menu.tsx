@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./Menu.scss";
 import { TiktokLink } from "../Tiktok/TiktokLink";
 import { YoutubeLink } from "../Youtube/YoutubeLink";
-import { TiktokIcon, YoutubeIcon } from "../../Icons/Icons";
+import { InstagramIcon, TiktokIcon, YoutubeIcon } from "../../Icons/Icons";
+import { InstagramLink } from "../Instagram/InstagramLink";
 
 export const Menu = () => {
   const [menu, setMenu] = useState("youtube");
@@ -25,6 +26,12 @@ export const Menu = () => {
           >
             <TiktokIcon /> Tiktok
           </button>
+          <button
+            className={`btn_transparent ${menu === "instagram" ? "active" : ""}`}
+            onClick={() => changeMenu("instagram")}
+          >
+            <InstagramIcon /> Instagram
+          </button>
         </div>
         <div className="title">
           <h1>Descarga Videos Gratis</h1>
@@ -32,6 +39,7 @@ export const Menu = () => {
         </div>
         {menu === "youtube" ? <YoutubeLink /> : ""}
         {menu === "tiktok" ? <TiktokLink /> : ""}
+        {menu === "instagram" ? <InstagramLink /> : ""}
       </div>
     </div>
   );
