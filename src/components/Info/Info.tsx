@@ -6,7 +6,7 @@ import "./Info.scss";
 export const Info = () => {
   const text = [
     {
-      title: "Descargar videos de Youtube gratis",
+      title: "Descargar Videos de Youtube",
       content:
         "DescargaVideos te ofrece una solución fácil y gratuita para descargar videos de YouTube. Con una interfaz intuitiva y amigable, podrás acceder a tus videos favoritos sin conexión en cuestión de segundos.",
       image: youtube,
@@ -34,7 +34,7 @@ export const Info = () => {
     <div className="info_section">
       <div className="info_title">
         <h2>Características de DescargaVideos</h2>
-        <p>Descarga videos de Youtube/Tiktok</p>
+        <p>Descarga videos de Youtube / Tiktok / Instagram / Facebook</p>
       </div>
       {text.map((info, index) => (
         <div className="info" key={index}>
