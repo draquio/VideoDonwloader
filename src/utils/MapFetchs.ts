@@ -5,6 +5,8 @@ import {
   TiktokI,
   InstagramResponse,
   InstagramI,
+  FacebookResponse,
+  FacebookI,
 } from "../interfaces/Interfaces";
 
 export const MapYoutube = (video: YoutubeResponse): YoutubeI => {
@@ -18,7 +20,8 @@ export const MapYoutube = (video: YoutubeResponse): YoutubeI => {
 };
 
 export const MapTiktok = (video: TiktokResponse): TiktokI => {
-  if (!video) return { id: "", video: "", title: "No video provided", thumbnail: "" };
+  if (!video)
+    return { id: "", video: "", title: "No video provided", thumbnail: "" };
   const tiktokvideo: TiktokI = {
     id: video.added_sound_music_info.id_str,
     thumbnail: video.video.dynamic_cover.url_list[0],
@@ -28,13 +31,26 @@ export const MapTiktok = (video: TiktokResponse): TiktokI => {
   return tiktokvideo;
 };
 
-export const MapInstagram = (video: InstagramResponse, title: string): InstagramI => {
-  if(!video) return { id: "", video: "", title: "no video provided", thumbnail: "" };
+export const MapInstagram = (video: InstagramResponse): InstagramI => {
+  if (!video)
+    return { id: "", video: "", title: "no video provided", thumbnail: "" };
   const instagramvideo: InstagramI = {
     id: video.instaUr,
     thumbnail: video.cover,
-    title: title,
-    video: video.download_link
+    title: "Instagram Reel for download",
+    video: video.download_link,
   };
   return instagramvideo;
-}
+};
+
+export const MapFacebook = (video: FacebookResponse): FacebookI => {
+  if (!video)
+    return { id: "", video: "", title: "no video provided", thumbnail: "" };
+  const facebookvideo: FacebookI = {
+    id: video.shortcode,
+    thumbnail: video.thumb,
+    title: "Facebook video for download",
+    video: video.download_url,
+  };
+  return facebookvideo;
+};

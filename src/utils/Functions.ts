@@ -17,9 +17,9 @@ export const downloadvideo = async (url: string, title: string) => {
 export const GetYoutubeID = (url: string) => {
   if (!url) return null;
   const patterns = [
-    /youtu\.be\/(\w+)/, // Formato corto
-    /youtube\.com\/.*[?&]v=([^#&?]+)/, // Formato largo
-    /\/shorts\/([A-Za-z0-9_-]+)/, // Formato de shorts
+    /youtu\.be\/(\w+)/,
+    /youtube\.com\/.*[?&]v=([^#&?]+)/,
+    /\/shorts\/([A-Za-z0-9_-]+)/,
   ];
   for (const pattern of patterns) {
     const match = url.match(pattern);
@@ -50,6 +50,11 @@ export const VerifyLinkTiktok = (url: string): boolean => {
 };
 
 export const VerifyLinkInstagramReel = (url:string): boolean =>{
-  const videoRegex = /^https:\/\/(www\.)?instagram\.com\/(reel|tv|p)\/[A-Za-z0-9-_]+\/?$/;
-  return videoRegex.test(url);
+  const Expression = /^https:\/\/www\.instagram\.com\/(reel|reels|p|tv)\/[A-Za-z0-9_-]+\/?.*$/;
+  return Expression.test(url);
+}
+
+export const VerifyLinkFacebook = (url:string): boolean => {
+  const Expression = /^https:\/\/www\.facebook\.com\/(?:watch\/\?v=|reel\/|[A-Za-z0-9._%-]+\/videos\/|[A-Za-z0-9._%-]+\/posts\/[A-Za-z0-9._%-]+\/videos\/)[A-Za-z0-9._%-]+\/?.*$/;
+  return Expression.test(url);
 }

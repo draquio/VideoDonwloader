@@ -6,6 +6,6 @@ export const ENV = {
     Tiktok_host: import.meta.env.VITE_TIKTOK_HOST,
     Instagram_host: import.meta.env.VITE_INSTAGRAM_HOST,
     Instagram_url: import.meta.env.VITE_INSTAGRAM_URL,
-    Instagram_url_for_data: import.meta.env.VITE_INSTAGRAM_URL_FOR_DATA,
-    Instagram_hot_for_data: import.meta.env.VITE_INSTAGRAM_HOST_FOR_DATA
+    Facebook_host: import.meta.env.VITE_FACEBOOK_HOST,
+    Facebook_url: import.meta.env.VITE_FACEBOOK_URL
 }

@@ -12,10 +12,11 @@
     max-width: 800px;
     margin: auto;
     .menu {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
+      max-width: 700px;
+      margin: auto;
       .btn_transparent {
         padding: 12px 20px;
         border: 0;
@@ -46,5 +47,13 @@
         font-weight: 300;
       }
     }
+  }
+}
+
+@media (max-width: $responsive_media) {
+  .content_data .block_info .menu{
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 10px;
+    gap: 10px;
   }
 }

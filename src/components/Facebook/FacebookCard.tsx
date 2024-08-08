@@ -1,13 +1,17 @@
+import { FacebookI } from "../../interfaces/Interfaces";
 
-import { InstagramI } from "../../interfaces/Interfaces";
-
-export const InstagramCard = (props: { video: InstagramI }) => {
+export const FacebookCard = (props: { video: FacebookI }) => {
   const { video } = props;
   return (
     <article className="tiktok_card" aria-label="tiktok_card">
-      <div className="content" style={{minHeight: "188px"}}>
-        <figure className="img_figure" style={{maxWidth: "350px"}}>
-          <img src={video.thumbnail} alt={video.title} loading="eager" style={{ aspectRatio: "auto" }} />
+      <div className="content" style={{ minHeight: "188px" }}>
+        <figure className="img_figure" style={{ maxWidth: "350px" }}>
+          <img
+            src={video.thumbnail}
+            alt={video.title}
+            loading="eager"
+            style={{ aspectRatio: "auto" }}
+          />
         </figure>
         <div className="content_info">
           <h3>
@@ -18,7 +22,7 @@ export const InstagramCard = (props: { video: InstagramI }) => {
             )}
           </h3>
           <a
-          target="_blank"
+            target="_blank"
             className="btn btn_green"
             download={video.title}
             href={`${video.video}&title=${video.title}`}

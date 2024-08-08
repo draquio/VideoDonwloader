@@ -19,6 +19,12 @@ export interface InstagramI {
   id: string;
 }
 
+export interface FacebookI{
+  title: string;
+  thumbnail: string;
+  video: string;
+  id: string;
+}
 export interface Formats {
   qualityLabel: string;
   url: string;
@@ -40,7 +46,8 @@ export interface InstagramResponse {
   cover: string;
   download_link: string;
 }
-export interface InstagramResponseData {
+
+export interface FacebookResponse {
   error: boolean;
   hosting: string;
   shortcode: string;
