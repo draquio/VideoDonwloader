@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { FacebookIcon } from '../../Icons/Icons';
 import { Facebook } from './Facebook';
+import { Error } from '../Error/Error';
 
 export const FacebookLink = () => {
     const [link, setLink] = useState<string>("");
@@ -26,6 +27,7 @@ export const FacebookLink = () => {
         </button>
       </form>
       {link.length > 0 ? <Facebook link={link} /> : ""}
+      <Error errortext="Facebook Downloader fuera de servicio temporalmente" closeError={() => {}} />
     </>
   )
 }

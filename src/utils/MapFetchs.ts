@@ -35,11 +35,12 @@ export const MapInstagram = (video: InstagramResponse): InstagramI => {
   if (!video)
     return { id: "", video: "", title: "no video provided", thumbnail: "" };
   const instagramvideo: InstagramI = {
-    id: video.instaUr,
-    thumbnail: video.cover,
-    title: "Instagram Reel for download",
-    video: video.download_link,
+    id: video.shortcode,
+    thumbnail: "https://images.ctfassets.net/00i767ygo3tc/4iyddd6SBkSO2khVorz4fP/e491ab7cfffc1b921dce626122b322b1/instagram-video-guide.png?w=1800&q=50",
+    title: video.caption,
+    video: video.download_url,
   };
+
   return instagramvideo;
 };
 

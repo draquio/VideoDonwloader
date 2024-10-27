@@ -17,7 +17,7 @@ export class Instagram {
       if (response.status === 200) {
         const result = await response.text();
         const resultJson = JSON.parse(result);
-        return MapInstagram(resultJson[0]);
+        return MapInstagram(resultJson);
       }
       throw response;
     } catch (error) {

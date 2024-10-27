@@ -42,9 +42,10 @@ export interface TiktokResponse {
 }
 
 export interface InstagramResponse {
-  instaUr: string;
-  cover: string;
-  download_link: string;
+  shortcode: string;
+  download_url: string;
+  thumb: string;
+  caption: string;
 }
 
 export interface FacebookResponse {
